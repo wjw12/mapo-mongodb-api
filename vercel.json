@@ -1,0 +1,7 @@
+{
+  "name": "mapo-mongodb-api",
+  "version": 2,
+  "env": {
+    "MONGODB_URI": "@mapo-mongodb-uri"
+  }
+}
