@@ -1,3 +1,6 @@
+// not an API
+// just showing how to use MongoDB with Node.js
+
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://" + process.env.MONGO_USERNAME + ":" + process.env.MONGO_PASSWORD + "@" + process.env.MONGO_HOST + ":27017/lsd?authSource=admin";
 
