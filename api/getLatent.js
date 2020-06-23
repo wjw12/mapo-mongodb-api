@@ -5,7 +5,7 @@
 
 const url = require('url')
 const MongoClient = require('mongodb').MongoClient
-const constant = require('constant.js')
+const constant = require('./constant.js')
 
 let cachedDb = null
 
@@ -31,11 +31,11 @@ module.exports = async (z) => {
   let index = 0;
   let query = {}
   for (let dim = 0; dim < constant.LATENT_DIM; dim++) {
-    let x = Math.floor((z[dim] - constant.Z_MIN) / (constant.Z_MAX - constant.Z_MIN) * GRID)
+    let x = Math.floor((z[dim] - constant.Z_MIN) / (constant.Z_MAX - constant.Z_MIN) * constant.GRID)
     index = Math.max(Math.min(x, constant.GRID - 1), 0);
     query["dim_" + dim.toString()] = index;
   }
 
-  const data = await collection.find(query);
+  const data = await collection.findOne(query);
   return data;
 }

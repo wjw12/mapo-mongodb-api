@@ -10,8 +10,8 @@ GET
 
 */
 
-const getLatent = require('getLatent.js');
-const constant = require('constant.js');
+const getLatent = require('./getLatent.js');
+const constant = require('./constant.js');
 
 module.exports = async (req, res) => {
   const {body} = req;
